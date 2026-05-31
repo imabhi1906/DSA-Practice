@@ -22,11 +22,21 @@ def revDigit(n):
     return res
 
 def palindromeCheck(n):
-    if (n==revDigit(n)):
-        return True
-    else:
-        return False
+    return n==revDigit(n)
 
+def armstrongCheck(n):
+    copy = n
+    res = 0
+    ex = len(str(n))
+    while copy>0:
+        res+= (copy%10)**ex
+        copy//=10
+    return res == n
+        
+
+
+
+# ---------------------------------------- #
 number = int(input("Enter a number: "))
 
 choice = int(input(
@@ -35,6 +45,7 @@ choice = int(input(
     "2) Count digits\n"
     "3) Reverse digits\n"
     "4) Palindrome check\n"
+    "5) Armstrong check\n"
     ":"
 ))
 
@@ -47,5 +58,7 @@ match choice:
         print(revDigit(number))
     case 4:
         print(palindromeCheck(number))
+    case 5:
+        print(armstrongCheck(number))
     case _:
         print("Invalid choice")
