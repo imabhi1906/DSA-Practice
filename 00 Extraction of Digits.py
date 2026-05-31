@@ -1,3 +1,5 @@
+from math import sqrt
+
 def printDigitsRev(n):
     li = []
     while n>0:
@@ -34,6 +36,19 @@ def armstrongCheck(n):
     return res == n
         
 
+def factorsPrint(n):
+    res = []
+    # for i in range(1,(n//2)+1):
+    #     if n%i==0:
+    #         res.append(i)
+    # res.append(n)
+    # return res
+    for i in range (1, int(sqrt(n))+1):
+        if n%i==0:
+            res.append(i)
+            if n//i!=i:
+                res.append(n//i)
+    return res
 
 
 # ---------------------------------------- #
@@ -46,6 +61,7 @@ choice = int(input(
     "3) Reverse digits\n"
     "4) Palindrome check\n"
     "5) Armstrong check\n"
+    "6) Print factors\n"
     ":"
 ))
 
@@ -60,5 +76,7 @@ match choice:
         print(palindromeCheck(number))
     case 5:
         print(armstrongCheck(number))
+    case 6:
+        print(factorsPrint(number))
     case _:
         print("Invalid choice")
