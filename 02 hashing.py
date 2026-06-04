@@ -11,7 +11,7 @@ size = int(input("Enter size of array: "))
 li = []
 print("Enter elements of the array: ")
 for i in range(0, size):
-    n = int(input(": "))
+    n = (input(": "))
     li.append(n)
 choice = int(input(
     "Enter your choice:\n"
