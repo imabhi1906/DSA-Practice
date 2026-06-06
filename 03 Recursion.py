@@ -29,6 +29,10 @@ def palindromeCheck(li, left, right):
     return palindromeCheck(li, left+1, right-1)
     
 
+def fiboSeries(n):
+    if n<=0:
+        return n
+    return fiboSeries(n)
 
 # ---------------------------------------- #
 choice = int(input(
